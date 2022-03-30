@@ -36,7 +36,7 @@ class OrderController extends Controller
      */
     public function store(StoreOrderRequest $request)
     {
-        dd($request->getContent());
+        dd($request->item_object);
     }
 
     /**

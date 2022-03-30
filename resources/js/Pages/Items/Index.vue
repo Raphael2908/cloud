@@ -58,7 +58,7 @@ export default {
     data(){
         return{
             form: this.$inertia.form({
-                itemObject: {}
+                item_object: {}
             })
         }
     },
@@ -70,15 +70,15 @@ export default {
     },
     methods:{
         Submit(){
-            this.$inertia.post(route('order.store'), this.form.itemObject)
+            this.$inertia.post(route('order.store'), this.form)
         },
         AddItem(itemId){
-            if(itemId in this.form.itemObject){
-                this.form.itemObject[itemId]++
+            if(itemId in this.form.item_object){
+                this.form.item_object[itemId]++
             }else{
-                this.form.itemObject[itemId] = 1
+                this.form.item_object[itemId] = 1
             }
-            console.log(this.form.itemObject)
+            console.log(this.form.item_object)
         }
     }
 }
